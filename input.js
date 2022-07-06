@@ -13,21 +13,28 @@ const setupInput = (conn) => {
 
 const handleUserInput = function (data) {
   // your code here
-  if (data === '\u0003') {
+  if (data === '\u0003') {  //CTRL + C
     process.exit();
-  } else if (data === '\u0077') {
-    console.log("w");
+  } else if (data === '\u0077') { // W
+    // console.log("w");
     connection.write("Move: up");
-  } else if (data === '\u0061') {
-    console.log("a");
-    connection.write("Move: left");
-  } else if (data === '\u0073') {
-    console.log("s");
-    connection.write("Move: down");
-  } else if (data === '\u0064') {
-    console.log("d");
+  } else if (data === '\u0061') { // A
+    // console.log("a");
+    connection.write("Move: left"); 
+  } else if (data === '\u0073') { // S  
+    // console.log("s");
+    connection.write("Move: down"); 
+  } else if (data === '\u0064') { // D
+    // console.log("d");
     connection.write("Move: right");
   }
+  else if (data === '\u007A') { // Z     
+    connection.write("Say: Good Game!");
+  }
+  else if (data === '\u0078') { // Z     
+    connection.write("Say: Missing Middle!");
+  }
+
 
 };
 
