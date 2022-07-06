@@ -1,5 +1,11 @@
 const net = require("net");
+
 // establishes a connection with the game server
+
+
+
+
+
 const connect = () => {
   const conn = net.createConnection({
     host: "165.227.47.243", // IP address here,
@@ -12,13 +18,26 @@ const connect = () => {
   conn.on("connect", () => {
     console.log("Welcome to Snake!")
     conn.write("Name: RTZ")
-  }) 
+  });
+
+
+  conn.on("connect", () => {
+    // setInterval(() => {
+    //   conn.write("Move: left");
+    //   conn.write("Move: up");
+    // }, 50);
+
+  });
+
+
 
   conn.on("data", (data) => {
     console.log("Snake says:", data);
   });
 
   return conn;
+
+
 };
 
 
